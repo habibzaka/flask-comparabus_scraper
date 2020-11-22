@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <h1>Comparateur de billets d'autocars</h1>
+  <h4>Comparez et trouvez les meilleurs tarifs</h4>
+  <hr class="my-4"/>
+  <form action="{{ url_for('comparateur') }}" method="post">
+    <input type="text" name="from" value="Paris" required>
+    <input type="text" name="to" value="Lille" required>
+    <input type="date" name="date" required>
+    <i class="glyphicon glyphicon-user"></i>
+    <input type="submit" class="btn btn-success" value="COMPARER" name="date"> 
+  </form>
+  <br>
+  <br>
+  <h4>Qu’est ce que Comparateur de bus?</h4>
+  <p>ComparaBUS vous permet de trouver des billets d’autocar pas cher en comparant les prix de plusieurs compagnies, telles que OUIBUS, BlaBlaBus, FlixBus, Megabus, Isilines, Eurolines, Starshipper. Nous desservons plus de 2200 destinations dans 43 pays mais sommes centrés aux voyages de bus en Europe et à l’international en partance ou en départ de la France. ComparaBUS est un service gratuit qui vous permet d’économiser votre temps et votre argent en vous proposant le bus au tarif le plus compétitif.</p>
+  <br>
+  <br>
+  <br>
+
+{% endblock %}
+
+

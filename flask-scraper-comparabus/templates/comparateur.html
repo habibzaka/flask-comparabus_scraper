@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <h1>Comparateur de billets d'autocars</h1>
+  <hr class="my-4"/>
+  <table id="proxy-table" class="display table responsvive text-left mt-4" style="width: 100%">
+    <thead>
+      <tr>
+        <th>Compagnies de bus</th>
+        <th>Départ</th>
+        <th>Arrivée</th>
+        <th>Durée</th>
+        <th>Prix</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in context %}
+        <tr>
+          <td>{{i[0]}}</td>
+          <td>{{i[1]}}</td>
+          <td>{{i[2]}}</td>
+          <td>{{i[3]}}</td>
+          <td>{{i[4]}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+  <hr class="my-4"/>
+  <a href="/download" class="btn btn-primary">Télecharger la liste</a>
+  
+  <script type="text/javascript">
+    $(document).ready( function() {
+      $('#proxy-table').DataTable();
+    });
+    // Material Select Initialization
+    $(document).ready(function() {
+    $('.mdb-select').materialSelect();
+    });
+  </script>
+{% endblock %}
+
+
